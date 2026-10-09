@@ -141,7 +141,7 @@ const doc = new Document({
           children: [new TextRun({ text: "Thời gian thực hiện: 01/10 – 10/10/2026", font: FONT, size: 22 })],
         }),
         new Paragraph({ spacing: { before: 200 },
-          children: [new TextRun({ text: "Sinh viên thực hiện: ...................................................... (MSSV: .........................)", font: FONT, size: 22 })],
+          children: [new TextRun({ text: "Sinh viên thực hiện: Lê Hoàng Xuân Mai (MSSV: 25521070)", font: FONT, size: 22 })],
         }),
         new Paragraph({ spacing: { before: 300, after: 200 },
           children: [new TextRun({ text: "Nội dung báo cáo:", bold: true, font: FONT, size: 24 })],
