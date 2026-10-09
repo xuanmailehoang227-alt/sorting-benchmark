@@ -16,7 +16,7 @@ function fmt(x) {
 }
 
 // ---------- Style dung chung ----------
-const FONT = "Calibri";
+const FONT = "Times New Roman";
 const TABLE_WIDTH = 9360; // DXA, ~6.5in
 const COL_WIDTHS = [1560, 1950, 1950, 1950, 1950]; // Du lieu + 4 thuat toan
 
@@ -38,7 +38,7 @@ function cell(text, opts = {}) {
             text: text,
             bold: opts.bold || false,
             font: FONT,
-            size: 21,
+            size: 26,
           }),
         ],
       }),
@@ -101,7 +101,7 @@ function heading(text, numbering) {
     heading: HeadingLevel.HEADING_1,
     spacing: { before: 300, after: 150 },
     children: [
-      new TextRun({ text: numbering ? `${numbering}. ${text}` : text, bold: true, font: FONT, size: 26 }),
+      new TextRun({ text: numbering ? `${numbering}. ${text}` : text, bold: true, font: FONT, size: 28 }),
     ],
   });
 }
@@ -109,21 +109,21 @@ function heading(text, numbering) {
 function subHeading(text) {
   return new Paragraph({
     spacing: { before: 200, after: 100 },
-    children: [new TextRun({ text, italics: true, bold: true, font: FONT, size: 23 })],
+    children: [new TextRun({ text, italics: true, bold: true, font: FONT, size: 26 })],
   });
 }
 
 function body(text, opts = {}) {
   return new Paragraph({
     spacing: { after: 120 },
-    children: [new TextRun({ text, font: FONT, size: 22, bold: opts.bold })],
+    children: [new TextRun({ text, font: FONT, size: 26, bold: opts.bold })],
   });
 }
 
 const doc = new Document({
   styles: {
     default: {
-      document: { run: { font: FONT, size: 22 } },
+      document: { run: { font: FONT, size: 26 } },
     },
   },
   sections: [
@@ -132,19 +132,19 @@ const doc = new Document({
       children: [
         // ---- Trang bia ----
         new Paragraph({
-          children: [new TextRun({ text: "Lớp: ", font: FONT, size: 24 }), new TextRun({ text: "IT003.R17", bold: true, font: FONT, size: 24 })],
+          children: [new TextRun({ text: "Lớp: ", font: FONT, size: 26 }), new TextRun({ text: "IT003.R17", bold: true, font: FONT, size: 26 })],
         }),
         new Paragraph({ spacing: { before: 300, after: 150 }, alignment: AlignmentType.CENTER,
-          children: [new TextRun({ text: "BÁO CÁO KẾT QUẢ THỬ NGHIỆM", bold: true, font: FONT, size: 36 })],
+          children: [new TextRun({ text: "BÁO CÁO KẾT QUẢ THỬ NGHIỆM", bold: true, font: FONT, size: 40 })],
         }),
         new Paragraph({
-          children: [new TextRun({ text: "Thời gian thực hiện: 01/10 – 10/10/2026", font: FONT, size: 22 })],
+          children: [new TextRun({ text: "Thời gian thực hiện: 01/10 – 10/10/2026", font: FONT, size: 26 })],
         }),
         new Paragraph({ spacing: { before: 200 },
-          children: [new TextRun({ text: "Sinh viên thực hiện: Lê Hoàng Xuân Mai (MSSV: 25521070)", font: FONT, size: 22 })],
+          children: [new TextRun({ text: "Sinh viên thực hiện: Lê Hoàng Xuân Mai (MSSV: 25521070)", font: FONT, size: 26 })],
         }),
         new Paragraph({ spacing: { before: 300, after: 200 },
-          children: [new TextRun({ text: "Nội dung báo cáo:", bold: true, font: FONT, size: 24 })],
+          children: [new TextRun({ text: "Nội dung báo cáo:", bold: true, font: FONT, size: 26 })],
         }),
 
         // ---- I. Ket qua thu nghiem ----
@@ -153,7 +153,7 @@ const doc = new Document({
         resultTable,
         new Paragraph({
           spacing: { before: 80, after: 200 },
-          children: [new TextRun({ text: "Môi trường thử nghiệm: biên dịch g++ -O2 -std=c++17; mỗi dãy ~1.000.000 số thực (kiểu double); dữ liệu sinh ngẫu nhiên với seed cố định = 2026 để đảm bảo khả năng tái lập.", italics: true, font: FONT, size: 18 })],
+          children: [new TextRun({ text: "Môi trường thử nghiệm: biên dịch g++ -O2 -std=c++17; mỗi dãy ~1.000.000 số thực (kiểu double); dữ liệu sinh ngẫu nhiên với seed cố định = 2026 để đảm bảo khả năng tái lập.", italics: true, font: FONT, size: 20 })],
         }),
 
         subHeading("2. Biểu đồ (cột) thời gian thực hiện"),
@@ -185,7 +185,7 @@ const doc = new Document({
         body(`Toàn bộ mã nguồn, dữ liệu thử nghiệm và báo cáo được lưu trữ công khai (public) tại:`),
         new Paragraph({
           spacing: { after: 160 },
-          children: [new TextRun({ text: GITHUB_URL, font: FONT, size: 22, bold: true, color: "2a78d6", underline: {} })],
+          children: [new TextRun({ text: GITHUB_URL, font: FONT, size: 26, bold: true, color: "2a78d6", underline: {} })],
         }),
         body("Repository bao gồm:", { bold: false }),
         body("1. Báo cáo (file PDF báo cáo kết quả thử nghiệm này)"),
