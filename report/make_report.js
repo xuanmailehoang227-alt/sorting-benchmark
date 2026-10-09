@@ -94,7 +94,7 @@ const resultTable = new Table({
 const chartImage = fs.readFileSync("results/chart.png");
 
 // ---------- Noi dung van ban ----------
-const GITHUB_URL = "__GITHUB_URL__"; // se duoc thay the sau khi day len GitHub
+const GITHUB_URL = "https://github.com/xuanmailehoang227-alt/sorting-benchmark"; // se duoc thay the sau khi day len GitHub
 
 function heading(text, numbering) {
   return new Paragraph({
